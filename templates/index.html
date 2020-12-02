@@ -1,0 +1,30 @@
+{% extends "_nologin.html" %}
+
+{% block content %}
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="column is-6 is-offset-3">
+          <h1 class="title">Shorten a URL</h1>
+          <h2 class="subtitle">
+            <b>shrtn</b> is a URL shortener. Paste a long, ugly URL below and receive a nice, simple link to share.
+          </h2>
+          <div class="box">
+            <form method="post">
+              <div class="field is-grouped">
+                {% csrf_token %}
+                <p class="control is-expanded">
+                  <input class="input" type="url" name="target" maxlength="750" required id="id_target"
+                         placeholder="Enter the URL to shorten.">
+                </p>
+                <p class="control">
+                  <button class="button is-link" type="submit">Submit</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

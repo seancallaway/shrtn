@@ -1,0 +1,22 @@
+{% extends "_nologin.html" %}
+
+{% block content %}
+
+  <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="column is-6 is-offset-3">
+          <h1 class="title">Your Link Has Been Created!</h1>
+          <h2 class="subtitle">
+            Feel free to share the below link with others.
+          </h2>
+          <h2 class="subtitle">
+            <a href="{{ my_link.get_absolute_url }}">
+              {% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ my_link.get_absolute_url }}
+            </a> redirects to
+            {{ my_link.target }}.
+          </h2>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

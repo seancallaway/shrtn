@@ -1,0 +1,43 @@
+{% extends "_base.html" %}
+
+{% block body %}
+
+  <section class="hero is-info is-fullheight">
+
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home' %}">shrtn</a>
+            <span class="navbar-burger burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <span class="navbar-item">
+                <a class="button is-white is-outlined" href="{% url 'home' %}">
+                  <span class="icon"><i class="fa fa-home"></i></span>
+                  <span>Home</span>
+                </a>
+              </span>
+              <span class="navbar-item">
+                <a class="button is-white is-outlined" href="https://github.com/seancallaway/shrtn">
+                  <span class="icon"><i class="fa fa-github"></i></span>
+                  <span>View Source</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+  </section>
+
+{% endblock %}
